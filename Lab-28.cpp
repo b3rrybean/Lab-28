@@ -75,11 +75,18 @@ int main() {
 
         // milestone 2: find oldest goat
         case 6: {
-
+            auto it = max_element(trip.begin(), trip.end(), [](const Goat &a, const Goat &b){ return a.get_age() < b.get_age(); });
+            cout << "Oldest goat: " << it->get_name() << 
         }
 
         // milestone 3: remove young goats
-        case 7:
+        case 7: {
+            int minAge;
+            cout << "Remove goats younger than: "; cin >> minAge;
+            trip.remove_if([&](const Goat g){ return g.get_age() < minAge; });
+            cout << "Young goats removed.\n";
+            breal;
+        }
 
 
         // milestone 4: count goats by color
@@ -87,7 +94,7 @@ int main() {
             string colorInput;
             cout << "Enter color to count: "; cin >> colorInput;
             int count = count_if(trip.begin(), trip.end(), [&](const Goat &g){ return g.get_color() == colorInput; });
-            cout << "Number of gots with color " << colorInput << ": " << count << endl;
+            cout << "Number of goats with color " << colorInput << ": " << count << endl;
             break;
         }
 
