@@ -97,7 +97,11 @@ int main() {
         // milestone 7: copy to vector
         case 11: {
             vector<Goat> goatVector(trip.begin(), trip.end());
-            cout << "Goat copied to vector.\n";
+            cout << "Goat copied to vector. Vector contents:\n";
+            int i = 1;
+            for (auto &g : goatVector)
+                cout << "\t[" << i++ << "] " << g.get_name() 
+                     << " (" << g.get_age() << ", " << g.get_color() << ")\n";
             break;
         }
 
