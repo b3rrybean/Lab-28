@@ -76,7 +76,8 @@ int main() {
         // milestone 2: find oldest goat
         case 6: {
             auto it = max_element(trip.begin(), trip.end(), [](const Goat &a, const Goat &b){ return a.get_age() < b.get_age(); });
-            cout << "Oldest goat: " << it->get_name() << 
+            cout << "Oldest goat: " << it->get_name() << it->get_age() << " years)\n";
+            break;
         }
 
         // milestone 3: remove young goats
@@ -100,7 +101,11 @@ int main() {
         }
 
         // milestone 5: search for a goat by name
-        case 9:
+        case 9:{
+            string nameSearch;
+            cout << "Enter name to search: "; cin >> nameSearch;
+            bool exists = any_pf(trip.begin(), trip.end(), [&] (const Goat &g){ return g.get_name() == nameSearch; });
+        }
 
 
         // milestone 6: reverse list
