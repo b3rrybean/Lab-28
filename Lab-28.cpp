@@ -83,8 +83,13 @@ int main() {
 
 
         // milestone 4: count goats by color
-        case 8:
-
+        case 8: {
+            string colorInput;
+            cout << "Enter color to count: "; cin >> colorInput;
+            int count = count_if(trip.begin(), trip.end(), [&](const Goat &g){ return g.get_color() == colorInput; });
+            cout << "Number of gots with color " << colorInput << ": " << count << endl;
+            break;
+        }
 
         // milestone 5: search for a goat by name
         case 9:
