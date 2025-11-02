@@ -85,7 +85,8 @@ int main() {
             cout << "Remove goats younger than: "; cin >> minAge;
             trip.remove_if([&](const Goat g){ return g.get_age() < minAge; });
             cout << "Young goats removed.\n";
-            breal;
+            display_trip(trip);
+            break;
         }
 
 
