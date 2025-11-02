@@ -104,7 +104,9 @@ int main() {
         case 9:{
             string nameSearch;
             cout << "Enter name to search: "; cin >> nameSearch;
-            bool exists = any_pf(trip.begin(), trip.end(), [&] (const Goat &g){ return g.get_name() == nameSearch; });
+            bool exists = any_of(trip.begin(), trip.end(), [&](const Goat &g){ return g.get_name() == nameSearch; });
+            cout << (exists ? "Found a goat with that name :)\n" : "Sorry, there is no goat with name.\n");
+            break;
         }
 
 
