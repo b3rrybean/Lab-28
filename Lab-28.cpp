@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iomanip>
 #include <list>
+#include <vector>
+#include <algorithm>
 #include "Goat.h"
 using namespace std;
 
@@ -58,35 +60,52 @@ int main() {
                 cout << "Displaying goat data.\n";
                 display_trip(trip);
                 break;
-            default:
-                cout << "Invalid selection.\n";
-                break;
-        }
 
         // milestone 1: sort by age
-
+        case 5:
+            trip.sort([](const Goat &a, const Goat &b){ return a.get_age() < b.get_age(); });
+            cout << "Goats sorted by age.\n";
+            display_trip(trip);
+            break;
 
         // milestone 2: find oldest goat
+        case 6: {
 
+        }
 
         // milestone 3: remove young goats
+        case 7:
 
 
         // milestone 4: count goats by color
+        case 8:
 
 
         // milestone 5: search for a goat by name
+        case 9:
 
 
         // milestone 6: reverse list
+        case 10:
 
 
         // milestone 7: copy to vector
+        case 11: {
+            vector<Goat> goatVector(trip.begin(), trip.end());
+            cout << "Goat copied to vector.\n";
+            break;
+        }
 
 
         // milestone 8: celebrate a birthday
+        case 12:
 
-        
+
+        default:
+                cout << "Invalid selection.\n";
+                break;
+
+        }
         sel = main_menu();
     }
     
@@ -112,7 +131,7 @@ int main_menu() {
 
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 4) {
+    while (choice < 1 || choice > 12) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
