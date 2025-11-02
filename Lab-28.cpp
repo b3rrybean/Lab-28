@@ -62,11 +62,16 @@ int main() {
                 break;
 
         // milestone 1: sort by age
-        case 5:
-            trip.sort([](const Goat &a, const Goat &b){ return a.get_age() < b.get_age(); });
-            cout << "Goats sorted by age.\n";
-            display_trip(trip);
+        case 5: {
+            int minAge;
+            cout << "Sort goats older than age: "; cin >> minAge;
+            list<Goat> subList;
+            for (auto &g : trip) if (g.get_age() > minAge) subList.push_back(g);
+            subList.sort([](const Goat &a, const Goat &b){ return a.get_age() < b.get_age(); });
+            cout << "Goats older than " << minAge << " sorted by age:\n";
+            display_trip(subList);
             break;
+        }
 
         // milestone 2: find oldest goat
         case 6: {
