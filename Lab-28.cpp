@@ -62,6 +62,31 @@ int main() {
                 cout << "Invalid selection.\n";
                 break;
         }
+
+        // milestone 1: sort by age
+
+
+        // milestone 2: find oldest goat
+
+
+        // milestone 3: remove young goats
+
+
+        // milestone 4: count goats by color
+
+
+        // milestone 5: search for a goat by name
+
+
+        // milestone 6: reverse list
+
+
+        // milestone 7: copy to vector
+
+
+        // milestone 8: celebrate a birthday
+
+        
         sel = main_menu();
     }
     
@@ -75,7 +100,16 @@ int main_menu() {
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
     cout << "[4] Quit\n";
+    cout << "[5] Sort goats by age\n";
+    cout << "[6] Find oldest goat\n";
+    cout << "[7] Remove young goats\n";
+    cout << "[8] Count goats by color\n";
+    cout << "[9] Search for a goat by name\n";
+    cout << "[10] Reverse goat list\n";
+    cout << "[11] Copy goats to a vector\n";
+    cout << "[12] Celebrate a birthday\n";
     cout << "Choice --> ";
+
     int choice;
     cin >> choice;
     while (choice < 1 || choice > 4) {
