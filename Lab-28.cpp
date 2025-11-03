@@ -112,7 +112,10 @@ int main() {
 
         // milestone 6: reverse list
         case 10: {
-            
+            trip.reverse();
+            cout << "Goat list reversed./n";
+            display_trip(trip);
+            break;
         }
 
 
