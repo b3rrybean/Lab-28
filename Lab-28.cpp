@@ -113,7 +113,7 @@ int main() {
         // milestone 6: reverse list
         case 10: {
             trip.reverse();
-            cout << "Goat list reversed./n";
+            cout << "Goat list reversed.\n";
             display_trip(trip);
             break;
         }
@@ -132,7 +132,13 @@ int main() {
 
 
         // milestone 8: celebrate a birthday
-        case 12:
+        case 12: {
+            int numBirthdays = rand() % 3 + 1;
+            cout << numBirthdays << " goat(s) are having a birthday.\n";
+            for (int i = 0; i < numBirthdays; i++) {
+                // might ditch this...
+            }
+        }
 
 
         default:
