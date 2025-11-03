@@ -4,6 +4,7 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <ctime>
 #include "Goat.h"
 using namespace std;
 
@@ -76,7 +77,7 @@ int main() {
         // milestone 2: find oldest goat
         case 6: {
             auto it = max_element(trip.begin(), trip.end(), [](const Goat &a, const Goat &b){ return a.get_age() < b.get_age(); });
-            cout << "Oldest goat: " << it->get_name() << it->get_age() << " years)\n";
+            cout << "Oldest goat: " << it->get_name() << " ("<< it->get_age() << " years)\n";
             break;
         }
 
@@ -133,11 +134,14 @@ int main() {
 
         // milestone 8: celebrate a birthday
         case 12: {
-            int numBirthdays = rand() % 3 + 1;
-            cout << numBirthdays << " goat(s) are having a birthday.\n";
-            for (int i = 0; i < numBirthdays; i++) {
-                // might ditch this...
-            }
+            int index = select_goat(trip);
+            auto it = trip.begin();
+            advance(it, index -1);
+            it->set_age(it->get_age() + 1);
+            cout << "Happy birthday to " << it->get_name() << "! They are now "
+                 << it->get_age() << " years old!\n";
+            display_trip(trip);
+            break;
         }
 
 
